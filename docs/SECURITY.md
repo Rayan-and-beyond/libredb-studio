@@ -136,6 +136,8 @@ same-**site**, cross-**origin** case — a sibling subdomain under the operator'
 domain does get the cookie and can time an authenticated endpoint. That residual is stated under
 "Known limits" below.
 
+**1.2, configuration.** Rate-limit budgets and windows are tunable through the `RATE_LIMIT_*` variables in the [`.env.example` rate-limiting section](../.env.example).
+
 **1.2.** The counters live in the application process. With more than one replica the budgets apply
 per replica; multi-replica deployments should enforce the same budgets at the ingress. See
 [`charts/libredb-studio/README.md`](../charts/libredb-studio/README.md).

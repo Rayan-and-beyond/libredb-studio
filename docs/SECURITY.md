@@ -63,6 +63,8 @@ credential and never by the request body. `src/proxy.ts`'s public-path list is u
 middleware admits this one path only when the credential verifies, and the handler verifies it
 again.
 
+**1.1, HSTS subdomains.** `HSTS_INCLUDE_SUBDOMAINS` is opt-in. Enabling it on a host such as `studio.example.com` makes HSTS apply to sibling hosts under the same domain too, so unrelated siblings must also be ready for HTTPS-only access.
+
 **1.1.** The Content-Security-Policy permits inline scripts, because the application is statically
 prerendered and its hydration scripts are inline and nonce-less. What the policy contains is
 **where an injected script could send data** — not whether one can run. Set `CSP_REPORT_ONLY=true`
